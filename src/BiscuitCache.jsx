@@ -29,8 +29,6 @@ const BiscuitCache = () => {
 
     useEffect(() => {
         // Biscuit.enableDebug()
-        // const unsub = Biscuit.subscribeKey('name', theName)
-        // const unsub = Biscuit.subscribeKey("name", Function(theName))
 
         const callme = async () => {
             // Biscuit.registerFetcher("rand", randomNames)

@@ -3,7 +3,7 @@ import './App.css'
 import Executor, { useExecutor } from "executor-fn"
 import Biscuit from 'biscuit-cache-js'
 import ExecutorDebugger from "./ExecutorDebugger"
-import BiscuitCache from './BiscuitCache'
+import BiscuitCache2 from './BiscuitCache2'
 
 
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       {/* <h1>Nothing to display</h1> */}
-      <BiscuitCache />
+      <BiscuitCache2 />
     </>
   )
 }
