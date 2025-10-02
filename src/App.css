@@ -1,0 +1,21 @@
+.myBtn {
+    padding: 5px 13px;
+    border: 2px solid;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.myBtn:hover {
+    border-color: hsl(120, 100%, 24%);
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(210, 2%, 16%);
+}
+
+.myDiv {
+    background-color: limegreen;
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+    position: relative;
+}
