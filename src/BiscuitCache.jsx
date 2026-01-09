@@ -1,6 +1,6 @@
 import Biscuit, { createBiscuit } from "biscuit-cache-js"
-import React, { useEffect, useState } from "react"
-import Executor, { useExecutor } from "executor-fn"
+import { useEffect, useState } from "react"
+import { Executor, useExecutor } from "executor-fn"
 
 // const User = createBiscuit({ namespace: "user", secret: "love:you" })
 // const Product = createBiscuit({ namespace: "product" })

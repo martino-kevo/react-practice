@@ -1,4 +1,4 @@
-import Executor, { useExecutor } from 'executor-fn'
+import { Executor, useExecutor } from 'executor-fn'
 import { useState } from 'react'
 
 const guessText = (uG, sG) => {
@@ -31,7 +31,7 @@ const displayText = Executor(d => d, {
 
 const NumberGuessing = () => {
     const guessDisplayText = useExecutor(displayText)
-    const userGuess = useExecutor(guess)
+    const userGuess = useExecutor(guess, true)
 
     const [guessInput, setGuessInput] = useState("")
     const [guesses, setGuesses] = useState(0)
@@ -52,7 +52,7 @@ const NumberGuessing = () => {
 
     const handleResetGame = () => {
         guess.reset()
-        guessDisplayText('')
+        displayText('')
         setGuesses(0)
     }
 
@@ -75,7 +75,7 @@ const NumberGuessing = () => {
                     Reset game
                 </button>
 
-                <h3>{guessDisplayText.value}</h3>
+                <h3>{guessDisplayText}</h3>
 
                 {/* Guessing section */}
                 <section style={{ display: 'flex', width: '100%', height: '70%' }}>

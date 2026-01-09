@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Executor, { useExecutor } from "executor-fn"
+import { Executor, useExecutor } from "executor-fn"
 
 const MyDate = () => {
     const [date, setDate] = useState(null)

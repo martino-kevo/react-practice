@@ -1,4 +1,4 @@
-import Executor from 'executor-fn'
+import { Executor } from 'executor-fn'
 
 export const aInput = Executor(input => input, {
     storeHistory: true,

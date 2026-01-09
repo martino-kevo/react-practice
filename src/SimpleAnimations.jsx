@@ -1,4 +1,4 @@
-import Executor, { useExecutor } from "executor-fn"
+import { Executor, useExecutor } from "executor-fn"
 
 const x = Executor(x => x, {
     // storeHistory: true,
@@ -33,11 +33,11 @@ const degrees = Executor(degrees => degrees, {
 const both = Executor.combine(x, y)
 
 const SimpleAnimations = () => {
-    const xPos = useExecutor(x)
-    const yPos = useExecutor(y)
-    const myScaleX = useExecutor(scaleX)
-    const myScaleY = useExecutor(scaleY)
-    const myDegrees = useExecutor(degrees)
+    const xPos = useExecutor(x, true)
+    const yPos = useExecutor(y, true)
+    const myScaleX = useExecutor(scaleX, true)
+    const myScaleY = useExecutor(scaleY, true)
+    const myDegrees = useExecutor(degrees, true)
 
     const handleBegin = () => {
         const id = setInterval(frame, 5)

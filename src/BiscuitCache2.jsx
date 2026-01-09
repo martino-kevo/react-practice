@@ -14,13 +14,12 @@ const BiscuitCache2 = () => {
 
     Biscuit.registerFetcher("rand", randomNames)
     useEffect(() => {
-        // Biscuit.enableDebug()
+        Biscuit.enableDebug()
         const unsub = Biscuit.subscribeKey("name", setName)
 
         console.log(Biscuit.getMissingFetcherIds())
 
         const callme = async () => {
-            // await Biscuit.ready()
             // await Biscuit.clear()
             // let tn = await Biscuit.get("name")
             // setName(tn)

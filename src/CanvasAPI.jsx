@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './styles/Canvas.css'
-import Executor, { useExecutor } from "executor-fn"
+import { Executor, useExecutor } from "executor-fn"
 
 // == DRAW LINES ==
 // const draw = (context) => {

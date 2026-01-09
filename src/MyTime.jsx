@@ -1,4 +1,4 @@
-import Executor, { useExecutor } from "executor-fn"
+import { Executor, useExecutor } from "executor-fn"
 import { useState } from "react"
 
 const myTime = Executor(() => {
@@ -45,7 +45,7 @@ const MyTime = () => {
         <>
             <button onClick={() => handleResume()}>Resume</button>
             <button onClick={() => handlePause()}>Pause</button>
-            <h2>{time.value || myTime()}</h2>
+            <h2>{time || myTime()}</h2>
         </>
     )
 }

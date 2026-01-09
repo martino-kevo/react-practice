@@ -1,34 +1,29 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Executor, { useExecutor } from "executor-fn"
+import { useState, useEffect } from "react";
+import "./App.css";
+import { Executor, useExecutor } from "executor-fn";
 
 const loadFile = Executor(async () => {
-  let fileLoaded = true
-
+  let fileLoaded = true;
+  await new Promise((r) => setTimeout(r, 200)); // simulate async
   if (fileLoaded) {
-    return 'File loaded'
+    return "File loaded";
   } else {
-    throw new Error('File NOT loaded')
+    throw new Error("File NOT loaded");
   }
-})
+});
 
 const MyPromise = () => {
-
   const start = async () => {
     try {
-      await loadFile()
-      console.log(loadFile.value)
+      await loadFile();
+      console.log(loadFile.value);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-  start()
+  };
+  start();
 
-  return (
-    <>
+  return <></>;
+};
 
-    </>
-  )
-}
-
-export default MyPromise
+export default MyPromise;

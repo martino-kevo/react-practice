@@ -1,5 +1,4 @@
-import React from "react"
-import Executor, { useExecutor } from "executor-fn"
+import { Executor, useExecutor } from "executor-fn"
 
 const initialBoard = Array(9).fill(null)
 
@@ -24,12 +23,12 @@ const gameState = Executor((board, move) => {
   return newBoard
 }, {
   storeHistory: true,
-  initialArgs: [initialBoard],
+  initialArgs: [initialBoard, { index: null, player: "", winner: "" }],
   callNow: true
 })
 
-function TicTacToe() {
-  const game = useExecutor(gameState)
+const TicTacToe = () => {
+  const game = useExecutor(gameState, true)
 
   const winner = calculateWinner(game.value)
   const isDraw = !winner && game.value.every(cell => cell !== null)
@@ -43,7 +42,7 @@ function TicTacToe() {
 
   const jumpTo = (step) => {
     if (step < 0 || step >= game.history.length) return
-    game.jump(step)
+    game.jumpTo(step)
   }
 
   return (
@@ -92,10 +91,10 @@ function TicTacToe() {
 
       {/* Controls */}
       <div style={{ marginTop: "1rem" }}>
-        <button onClick={game.undo} disabled={game.history.length <= 1}>
+        <button onClick={() => game.undo()} disabled={game.history.length <= 1}>
           ⏪ Undo
         </button>
-        <button onClick={game.redo} disabled={game.redoStack.length === 0}>
+        <button onClick={() => game.redo()} disabled={game.redoStack.length === 0}>
           ⏩ Redo
         </button>
       </div>
