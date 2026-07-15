@@ -39,7 +39,7 @@ const BiscuitCache = () => {
             console.log(theName.history)
 
             // if (!Biscuit.has("name")) {
-            //     await Biscuit.set("name:history", name.value, 2 * 60 * 1000)
+            //     await Biscuit.set("name:history", name, 2 * 60 * 1000)
             // }
         }
 
@@ -95,7 +95,7 @@ const BiscuitCache = () => {
 
     return (
         <>
-            <h2>{name.value}</h2>
+            <h2>{name}</h2>
             <button onClick={() => handleMutate()}>Change name</button>
         </>
     )
